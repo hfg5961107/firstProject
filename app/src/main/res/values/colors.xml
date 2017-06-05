@@ -5,5 +5,19 @@
     <color name="colorAccent">#FF4081</color>
 
     <color name="black">#000000</color>
-    <color name="wite">#ffffff</color>
+    <color name="app_theme">#c1393d</color>
+    <color name="line_color">#dedfe0</color>
+    <color name="black_value">#333333</color>
+    <color name="title_gray">#757575</color>
+    <color name="general_gray">#aaaaaa</color>
+    <color name="bottom_navigation_text_color">#818181</color>
+    <color name="white">#ffffff</color>
+    <color name="forget_password">#b58d8e</color>
+    <color name="yanzhengma">#d86467</color>
+    <color name="bg_color">#f3f4f4</color>
+    <color name="zhuzhi_doctor">#df8286</color>
+    <color name="delete_order">#d1d1d1</color>
+    <color name="service_detail_bg">#f3f1f1</color>
+    <color name="bg_zan_fenxiang">#534343</color>
+
 </resources>

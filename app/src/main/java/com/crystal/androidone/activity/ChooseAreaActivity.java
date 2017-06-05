@@ -1,6 +1,7 @@
 package com.crystal.androidone.activity;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
@@ -102,6 +103,13 @@ public class ChooseAreaActivity extends SubActivity {
                 } else if (currentLevel == LEVEL_CITY) {
                     selectedCity = cityList.get(index);
                     queryCounties();
+                }else if (currentLevel == LEVEL_COUNTY) {
+                    String countyCode = countyList.get(index).getCountyCode();
+                    Intent intent = new Intent(ChooseAreaActivity.this,
+                            WeatherActivity.class);
+                    intent.putExtra("county_code", countyCode);
+                    startActivity(intent);
+                    finish();
                 }
             }
         });
@@ -140,7 +148,7 @@ public class ChooseAreaActivity extends SubActivity {
             }
             adapter.notifyDataSetChanged();
             listView.setSelection(0);
-            setTitle("中国");
+            toolbarTitle.setText("中国");
             currentLevel = LEVEL_PROVINCE;
         } else {
             queryFromServer(null, "province");
@@ -159,7 +167,7 @@ public class ChooseAreaActivity extends SubActivity {
             }
             adapter.notifyDataSetChanged();
             listView.setSelection(0);
-            setTitle(selectedProvince.getProvinceName());
+            toolbarTitle.setText(selectedProvince.getProvinceName());
             currentLevel = LEVEL_CITY;
         } else {
             queryFromServer(selectedProvince.getProvinceCode(), "city");
@@ -178,7 +186,7 @@ public class ChooseAreaActivity extends SubActivity {
             }
             adapter.notifyDataSetChanged();
             listView.setSelection(0);
-            setTitle(selectedCity.getCityName());
+            toolbarTitle.setText(selectedCity.getCityName());
             currentLevel = LEVEL_COUNTY;
         } else {
             queryFromServer(selectedCity.getCityCode(), "county");

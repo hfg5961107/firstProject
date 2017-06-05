@@ -361,8 +361,7 @@ public abstract class BaseActivity extends AppCompatActivity implements SwipeBac
         setContext(this);
         //初始化界面
         initUI();
-
-
+        
     }
 
     public void setToolbar(Toolbar toolbar) {
